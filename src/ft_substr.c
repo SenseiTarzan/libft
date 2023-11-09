@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 13:33:48 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/09 11:42:17 by gcaptari         ###   ########.fr       */
+/*   Created: 2023/11/09 09:37:42 by gcaptari          #+#    #+#             */
+/*   Updated: 2023/11/09 12:15:37 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(const char *str, unsigned int start, size_t len)
 {
-	unsigned char	*ptr;
+	const size_t		*size = ft_strlen(str);
+	char				*new_str;
+	char				*tmp;
+	char				*s;
 
-	if (n == 0)
-		return (dest);
-	if (dest == NULL)
+	if (str == NULL || start > size || len == 0)
 		return (NULL);
-	if (src == NULL)
-		return (dest);
-	ptr = (unsigned char *)dest;
-	while (n-- > 0)
-		*ptr++ = *(unsigned char *)src++;
-	return (dest);
+	if ((start + len) > size)
+		len = size - start;
+	tmp = ((char *)str) + start;
+	new_str = (char *) malloc(sizeof (char) * len + 1);
+	if (new_str == NULL)
+		return (NULL);
+	s = new_str;
+	while (len-- > 0)
+		*s++ = *tmp++;
+	*s = 0;
+	return (new_str);
 }

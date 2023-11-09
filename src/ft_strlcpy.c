@@ -6,21 +6,22 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:38:17 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/08 14:55:41 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/09 12:16:19 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	char	*tmp;
+	const size_t	src_length = ft_strlen(src);
+	char			*tmp;
 
-	tmp = dest;
+	tmp = (char *)src;
 	if (size == 0)
-		return (dest);
+		return (src_length);
 	while (size-- > 0)
-		*tmp++ = *src++;
-	*tmp = 0;
-	return (tmp - dest);
+		*dest++ = *tmp++;
+	*dest = 0;
+	return (src_length);
 }

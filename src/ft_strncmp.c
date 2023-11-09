@@ -6,11 +6,11 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:46:45 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/07 13:13:02 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:42:17 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

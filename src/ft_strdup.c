@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchar.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 12:46:45 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/07 13:17:24 by gcaptari         ###   ########.fr       */
+/*   Created: 2023/11/09 12:02:44 by gcaptari          #+#    #+#             */
+/*   Updated: 2023/11/09 12:45:14 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 
-void	*ft_memchar(const void *v1, int c, size_t n)
+#include "../includes/libft.h"
+
+char	*ft_strdup(const char *src)
 {
-	size_t			index;
+	const size_t	len = ft_strlen(src);
+	void			*new_str;
 
-	index = 0;
-	c = (unsigned char )c;
-	while (index++ < n)
-	{
-		if (*(unsigned char *)v1 == c)
-			return (v1);
-		v1++;
-	}
-	return (NULL);
+	new_str = ft_calloc(len + 1, sizeof (char));
+	if (new_str == NULL)
+		return (NULL);
+	ft_memcpy(new_str, src, len);
+	return ((char *) new_str);
 }
