@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#	ifndef LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
 # include <stdint.h>
@@ -25,7 +25,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 char	*ft_strstr(const char *haystack, const char *neddle);
 
-
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 int		ft_memcmp(const void *v1, const void *v2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
