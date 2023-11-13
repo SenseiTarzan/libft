@@ -6,7 +6,7 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:34:29 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/09 11:42:17 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/13 16:34:03 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static char	ft_detect_no_number(char str)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	unsigned int	number;
 	int				signe;
@@ -34,7 +34,7 @@ int	ft_atoi(char *str)
 
 	if (*str == 0)
 		return (0);
-	tmp = str;
+	tmp = (char *)str;
 	number = 0;
 	tmp = ft_skip_epmty_text(tmp);
 	signe = 1;

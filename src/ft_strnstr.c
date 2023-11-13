@@ -6,7 +6,7 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:11:32 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/09 15:54:31 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/13 11:39:30 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static size_t	ft_max(size_t n, size_t n2)
 static void	ft_skip_table(size_t list_ascii[256],
 		char *needle, const size_t n_len)
 {
-	int			i;
+	size_t			i;
 
 	i = 0;
 	while (i < 256)
@@ -30,7 +30,7 @@ static void	ft_skip_table(size_t list_ascii[256],
 	i = 0;
 	while (i < n_len - 1)
 	{
-		list_ascii[(int)needle[i]] = ft_max((n_len - i - 1), 1);
+		list_ascii[(size_t)needle[i]] = ft_max((n_len - i - 1), 1);
 		i++;
 	}
 }

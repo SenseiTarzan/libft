@@ -6,7 +6,7 @@
 #    By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/09 11:46:37 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/13 16:33:07 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCDIR		=	./src
 SRC			=	ft_atoi.c 		\
 				ft_bzero.c		\
 				ft_calloc.c		\
+				ft_isalnum.c	\
 				ft_isalnum.c	\
 				ft_isalpha.c	\
 				ft_isascii.c	\
@@ -38,7 +39,9 @@ SRC			=	ft_atoi.c 		\
 				ft_strnstr.c	\
 				ft_strrchr.c	\
 				ft_tolower.c	\
-				ft_toupper.c	
+				ft_toupper.c	\
+				ft_atoi.c		\
+				ft_substr.c	
 
 # Objects
 OBJDIR		=	obj
@@ -62,8 +65,7 @@ OPTIONS		=	-I $(INC)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	ar -rcs $(NAME) $(OBJ)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	mkdir -p $(OBJDIR)

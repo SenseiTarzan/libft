@@ -6,11 +6,13 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:05:03 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/07 12:05:04 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:45:00 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalnum(int c)
+#include "../includes/libft.h"
+
+int	ft_isalnum(int c)
 {
-	return ((c > 47 && c < 58) || ((c > 59 && c < 91) || (c > 96 && c < 123)));
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

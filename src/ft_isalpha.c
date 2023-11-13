@@ -6,11 +6,11 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:49:36 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/07 11:57:16 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/13 09:42:49 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalpha(int c)
+int	ft_isalpha(int c)
 {
-	return ((c > 59 && c < 91) || (c > 96 && c < 123));
+	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }
