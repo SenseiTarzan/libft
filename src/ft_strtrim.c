@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:37:51 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/14 08:54:43 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:46:14 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,20 @@ static size_t	ft_strtrim_length(const char *str, size_t len,
 	return (i);
 }
 
-
 char	*ft_strtrim(const char *str, const char *set)
 {
-	char							*tmp;
 	char							*new_str;
-	char							*s;
 	const size_t					len = ft_strlen(str);
-	t_bypass_trim					trim;
+	struct s_bypass_trim			trim;
 
 	trim.len_start = ft_strtrim_length(str, len, set, 0);
 	if (trim.len_start == len)
 		return (ft_calloc(1, sizeof(char)));
-	tmp = (char *)str;
 	trim.len_end = ft_strtrim_length(str, len, set, 1);
-	new_str = calloc(len - (trim.len_end + trim.len_start) + 1, sizeof(char));
+	trim.real_len = (len - (trim.len_start + trim.len_end));
+	new_str = ft_calloc(trim.real_len + 1, sizeof(char));
 	if (!new_str)
 		return (NULL);
-	tmp = (char *)str + trim.len_start;
-	s = new_str;
-	while (*tmp && (size_t)(tmp - str) <= (len - trim.len_end - 1))
-		*s++ = *tmp++;
+	ft_memmove(new_str, (char *)str + trim.len_start, trim.real_len);
 	return (new_str);
 }

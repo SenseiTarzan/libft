@@ -6,24 +6,17 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:34:29 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/13 16:34:03 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/15 16:19:19 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static char	*ft_skip_epmty_text(char *str)
 {
 	while (*str >= 9 && *str <= 32)
 		str++;
 	return (str);
-}
-
-static char	ft_detect_no_number(char str)
-{
-	if ((str < 48 || str > 57))
-		return (1);
-	return (0);
 }
 
 int	ft_atoi(const char *str)
@@ -44,7 +37,7 @@ int	ft_atoi(const char *str)
 			signe = -signe;
 		tmp++;
 	}
-	while (*tmp && !ft_detect_no_number(*tmp))
+	while (*tmp && ft_isdigit(*tmp))
 	{
 		number = number * 10 +(*tmp++) - 48;
 	}

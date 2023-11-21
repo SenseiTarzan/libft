@@ -6,7 +6,7 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:43:34 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/13 16:27:07 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:03:50 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strrchr(const char *str, int c)
 {
 	const unsigned char	h = (const unsigned char) c;
-	char	*last_char;
+	char				*last_char;
 
 	last_char = (char *) NULL;
 	while (*str)

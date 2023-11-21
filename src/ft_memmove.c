@@ -6,7 +6,7 @@
 /*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:25:51 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/13 09:58:13 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/14 09:31:27 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*lasr_s;
-	char		*last_d;
-	char		*d;
-	const char	*s = src;
+	const unsigned char		*lasr_s;
+	unsigned char			*last_d;
+	unsigned char			*d;
+	const unsigned char		*s = (const unsigned char *)src;
 
-	d = dest;
+	d = (unsigned char *)dest;
 	if (d < s)
 	{
 		while (n--)
@@ -27,7 +27,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		lasr_s = (char *)s + (n - 1);
+		lasr_s = (unsigned char *)s + (n - 1);
 		last_d = d + (n - 1);
 		while (n--)
 			*last_d-- = *lasr_s--;

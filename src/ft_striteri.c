@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 12:14:51 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/15 14:31:36 by gcaptari         ###   ########.fr       */
+/*   Created: 2023/11/21 11:57:27 by gcaptari          #+#    #+#             */
+/*   Updated: 2023/11/21 11:57:42 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-size_t	ft_strlen(const char *str)
+void	ft_striteri(char *str, void (*f)(unsigned int, char *))
 {
-	const char	*tmp = str;
+	unsigned int	i;
 
-	while (*tmp)
-		tmp++;
-	return (tmp - str);
+	i = 0;
+	if (!str || !f)
+		return ;
+	while (*str)
+		f(i++, str++);
 }
