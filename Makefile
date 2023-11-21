@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/21 12:39:40 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/21 12:51:40 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,14 +54,14 @@ SRC			=	ft_atoi.c 		\
 				ft_striteri.c
 
 SRC_BONUS_DIR		=	$(SRC_DIR)/bonus
-SRC_BONUS			=	ft_lstnew_bonus.c		\
-						ft_lstadd_front_bonus.c	\
-						ft_lstsize_bonus.c		\
-						ft_lstlast_bonus.c		\
-						ft_lstadd_back_bonus.c	\
-						ft_lstdelone_bonus.c	\
-						ft_lstclear_bonus.c		\
-						ft_lstiter_bonus.c		\
+SRC_BONUS			=	ft_lstnew_bonus.c			\
+						ft_lstadd_front_bonus.c		\
+						ft_lstsize_bonus.c			\
+						ft_lstlast_bonus.c			\
+						ft_lstadd_back_bonus.c		\
+						ft_lstdelone_bonus.c		\
+						ft_lstclear_bonus.c			\
+						ft_lstiter_bonus.c			\
 						ft_lstmap_bonus.c
 
 # Objects

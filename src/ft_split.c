@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:22:52 by sgabsi            #+#    #+#             */
-/*   Updated: 2023/11/15 16:12:12 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:53:19 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static unsigned char	free_all(void **ptr, size_t size)
 
 char	**ft_split(const char *str, char sepparator)
 {
-	char				    **sp;
+	char					**sp;
 	char					**tmp_sp;
 	char					*tmp;
 	struct s_bypass_split	k;

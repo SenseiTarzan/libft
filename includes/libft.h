@@ -6,7 +6,7 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:48:16 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/21 12:33:12 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:52:37 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <stdint.h>
-#include <unistd.h>
+# include <unistd.h>
 # include <stdio.h>
 
 /*
@@ -191,61 +191,51 @@ void	ft_putchar_fd(char c, int fd);
 * ft_putstr_fd permet d'ecrire un (char *) dans un file descriptor
 */
 void	ft_putstr_fd(const char *s, int fd);
-
 /*
 * ft_putendl_fd permet d'ecrire un (char *) dans un file descriptor
 * avec un \n a la fin
 */
 void	ft_putendl_fd(const char *s, int fd);
-
 /*
 * ft_putnbr_fd permet d'ecrire un int dans un file descriptor
 */
 void	ft_putnbr_fd(int n, int fd);
-
 /*
 * ft_lstnew permet de creer un nouveau maillon
 */
 t_list	*ft_lstnew(void *content);
-
 /*
 * ft_lstadd_front permet d'ajouter un maillon au debut de la liste
 */
 void	ft_lstadd_front(t_list **alst, t_list *new);
-
 /*
 * ft_lstsize permet de donner la taille de la liste
 */
 int		ft_lstsize(t_list *lst);
-
 /*
 * ft_lstlast permet de donner le dernier maillon de la liste
 */
 t_list	*ft_lstlast(t_list *lst);
-
 /*
 * ft_lstadd_back permet d'ajouter un maillon a la fin de la liste
 */
 
 void	ft_lstadd_back(t_list **alst, t_list *new);
-
 /*
 * ft_lstdelone permet de supprimer un maillon de la liste
 */
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
-
 /*
 * ft_lstclear permet de supprimer tous les maillons de la liste
 */
 void	ft_lstclear(t_list **lst, void (*del)(void *));
-
 /*
 * ft_lstiter permet d'appliquer une fonction a tous les maillons de la liste
 */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-
 /*
 * ft_lstmap permet de creer une nouvelle liste avec une fonction
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 #endif
