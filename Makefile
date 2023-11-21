@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/21 12:51:40 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/21 15:17:46 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,7 @@ SRC_BONUS			=	ft_lstnew_bonus.c			\
 						ft_lstadd_back_bonus.c		\
 						ft_lstdelone_bonus.c		\
 						ft_lstclear_bonus.c			\
-						ft_lstiter_bonus.c			\
+						ft_lstiter_bonus.c			 \
 						ft_lstmap_bonus.c
 
 # Objects
