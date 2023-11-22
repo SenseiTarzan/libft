@@ -6,7 +6,7 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 13:37:51 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/21 12:46:14 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:06:27 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,13 @@ static size_t	ft_strtrim_length(const char *str, size_t len,
 
 char	*ft_strtrim(const char *str, const char *set)
 {
-	char							*new_str;
-	const size_t					len = ft_strlen(str);
-	struct s_bypass_trim			trim;
+	char					*new_str;
+	size_t					len;
+	struct s_bypass_trim	trim;
 
+	if (!str || !set)
+		return (NULL);
+	len = ft_strlen(str);
 	trim.len_start = ft_strtrim_length(str, len, set, 0);
 	if (trim.len_start == len)
 		return (ft_calloc(1, sizeof(char)));

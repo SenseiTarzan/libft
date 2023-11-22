@@ -6,20 +6,18 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/21 15:17:46 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/22 16:44:24 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #################
 ##  VARIABLES  ##
 #################
-
 # Sources
 SRC_DIR		=	./src
 SRC			=	ft_atoi.c 		\
 				ft_bzero.c		\
 				ft_calloc.c		\
-				ft_isalnum.c	\
 				ft_isalnum.c	\
 				ft_isalpha.c	\
 				ft_isascii.c	\
@@ -41,7 +39,6 @@ SRC			=	ft_atoi.c 		\
 				ft_strrchr.c	\
 				ft_tolower.c	\
 				ft_toupper.c	\
-				ft_atoi.c		\
 				ft_itoa.c		\
 				ft_strtrim.c	\
 				ft_substr.c		\
@@ -54,15 +51,15 @@ SRC			=	ft_atoi.c 		\
 				ft_striteri.c
 
 SRC_BONUS_DIR		=	$(SRC_DIR)/bonus
-SRC_BONUS			=	ft_lstnew_bonus.c			\
-						ft_lstadd_front_bonus.c		\
-						ft_lstsize_bonus.c			\
-						ft_lstlast_bonus.c			\
-						ft_lstadd_back_bonus.c		\
-						ft_lstdelone_bonus.c		\
-						ft_lstclear_bonus.c			\
-						ft_lstiter_bonus.c			 \
-						ft_lstmap_bonus.c
+SRC_BONUS			=	ft_lstnew.c				\
+						ft_lstadd_front.c		\
+						ft_lstsize.c			\
+						ft_lstlast.c			\
+						ft_lstadd_back.c		\
+						ft_lstdelone.c			\
+						ft_lstclear.c			\
+						ft_lstiter.c			\
+						ft_lstmap.c
 
 # Objects
 OBJDIR		=	obj
@@ -87,12 +84,17 @@ OPTIONS		=	-I $(INC)
 
 all: $(NAME)
 
+
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
+so: $(OBJ)
+	gcc -nostartfiles -shared $(OPTIONS) -o libft.so $(OBJ)
+
 $(OBJDIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJDIR)
-	$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	##$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
 	mkdir -p $(OBJDIR)
@@ -109,4 +111,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonus so

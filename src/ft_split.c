@@ -6,7 +6,7 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:22:52 by sgabsi            #+#    #+#             */
-/*   Updated: 2023/11/21 12:53:19 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:41:36 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static unsigned char	free_all(void **ptr, size_t size)
 {
 	if (ptr == NULL)
 		return (0);
-	while (size > 0 && ptr[size] != NULL)
+	while (size > 0)
 		free(ptr[size--]);
 	free(ptr);
 	return (0);
@@ -64,13 +64,13 @@ char	**ft_split(const char *str, char sepparator)
 	char					*tmp;
 	struct s_bypass_split	k;
 
+	if (!str)
+		return (NULL);
 	tmp = (char *)str;
 	k.spliter_count = ft_count_world(tmp, sepparator);
 	sp = (char **)ft_calloc((k.spliter_count + 1), sizeof(char *));
-	if (!sp)
-		return (NULL);
 	tmp_sp = sp;
-	while (*tmp != 0)
+	while (*tmp != 0 && sp)
 	{
 		tmp += ft_strlen_split(tmp, sepparator, 1);
 		if (*tmp == 0)

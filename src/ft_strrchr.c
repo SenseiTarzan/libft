@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcaptari <gcaptari@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:43:34 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/14 09:03:50 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/22 09:10:25 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ char	*ft_strrchr(const char *str, int c)
 	last_char = (char *) NULL;
 	while (*str)
 	{
-		if (*str == h)
+		if (*(unsigned char *)str == h)
 			last_char = (char *) str;
 		str++;
 	}
-	if (*str == h)
+	if (*(unsigned char *)str == h)
 		last_char = (char *) str;
 	return (last_char);
 }
