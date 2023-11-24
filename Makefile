@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/22 16:44:24 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/24 10:38:28 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 ##  VARIABLES  ##
 #################
 # Sources
-SRC_DIR		=	./src
+SRC_DIR		=	./
 SRC			=	ft_atoi.c 		\
 				ft_bzero.c		\
 				ft_calloc.c		\
@@ -50,16 +50,16 @@ SRC			=	ft_atoi.c 		\
 				ft_strmapi.c	\
 				ft_striteri.c
 
-SRC_BONUS_DIR		=	$(SRC_DIR)/bonus
-SRC_BONUS			=	ft_lstnew.c				\
-						ft_lstadd_front.c		\
-						ft_lstsize.c			\
-						ft_lstlast.c			\
-						ft_lstadd_back.c		\
-						ft_lstdelone.c			\
-						ft_lstclear.c			\
-						ft_lstiter.c			\
-						ft_lstmap.c
+SRC_BONUS_DIR		=	$(SRC_DIR)
+SRC_BONUS			=	ft_lstnew_bonus.c			\
+						ft_lstadd_front_bonus.c		\
+						ft_lstsize_bonus.c			\
+						ft_lstlast_bonus.c			\
+						ft_lstadd_back_bonus.c		\
+						ft_lstdelone_bonus.c		\
+						ft_lstclear_bonus.c			\
+						ft_lstiter_bonus.c			\
+						ft_lstmap_bonus.c
 
 # Objects
 OBJDIR		=	obj
@@ -68,7 +68,7 @@ OBJ			=	$(SRC:%.c=$(OBJDIR)/%.o)
 BOBJ			=	$(SRC_BONUS:%.c=$(OBJDIR)/%.o)
 
 # Includes
-INC			=	./includes/
+INC			=	./libft.h
 
 # Output
 NAME		=	libft.a
@@ -88,16 +88,17 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar -rcs $(NAME) $(OBJ)
 
-so: $(OBJ)
-	gcc -nostartfiles -shared $(OPTIONS) -o libft.so $(OBJ)
+so: $(OBJ) $(BOBJ)
+	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
 
 $(OBJDIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJDIR)
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
-	##$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	#$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
 	mkdir -p $(OBJDIR)
+	#$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
 	$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 bonus: $(NAME) $(BOBJ)
@@ -111,4 +112,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus so
+.PHONY: all clean fclean re bonus
