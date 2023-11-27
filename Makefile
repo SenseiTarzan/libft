@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/24 10:38:28 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/11/27 11:58:53 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,8 @@ INC			=	./libft.h
 NAME		=	libft.a
 
 # Compiler
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Wextra -Werror
+COPTIMISE	=	-O2 -ffreestanding -nostdlib
 CC			=	cc
 OPTIONS		=	-I $(INC)
 
@@ -83,32 +84,27 @@ OPTIONS		=	-I $(INC)
 #################
 
 all: $(NAME)
-
+	@echo "libft compiled"
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-
-so: $(OBJ) $(BOBJ)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(BOBJ)
+	@ar -rcs $(NAME) $(OBJ)
 
 $(OBJDIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(OBJDIR)
-	#$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
-	$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
-	mkdir -p $(OBJDIR)
-	#$(CC) -nostartfiles -fPIC $(CFLAGS) $(OPTIONS) -o $@ -c $<
-	$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
+	@mkdir -p $(OBJDIR)
+	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 bonus: $(NAME) $(BOBJ)
-	ar -rcs $(NAME) $(BOBJ)
+	@ar -rcs $(NAME) $(BOBJ)
 
 clean:
-	/bin/rm -rf $(OBJDIR)
+	@/bin/rm -rf $(OBJDIR)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 

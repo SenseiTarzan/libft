@@ -6,16 +6,14 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:48:16 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/21 12:52:37 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:15:46 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-# include <stdint.h>
 # include <unistd.h>
-# include <stdio.h>
 
 /*
 * permet de bypass de varialbe la limit de la normes 42 XD

@@ -6,7 +6,7 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 11:14:33 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/24 10:30:13 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/27 10:16:17 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_calloc(size_t count, size_t size)
 		count = 1;
 		size = 1;
 	}
-	if (count > SIZE_MAX / size)
+	if (count > ((size_t) -1) / size)
 		return (NULL);
 	len = count * size;
 	v = malloc(len);
