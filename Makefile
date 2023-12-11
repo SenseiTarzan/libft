@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/11/27 11:58:53 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/12/11 09:40:05 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ NAME		=	libft.a
 
 # Compiler
 CFLAGS		=	-Wall -Wextra -Werror
-COPTIMISE	=	-O2 -ffreestanding -nostdlib
+COPTIMISE	=	-O2 -ffreestanding -nostdlib -fno-builtin
 CC			=	cc
 OPTIONS		=	-I $(INC)
 
@@ -89,12 +89,17 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	@ar -rcs $(NAME) $(OBJ)
 
+so: $(OBJ)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
+
 $(OBJDIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJDIR)
+#-nostartfiles -fPIC $(COPTIMISE)
 	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
 	@mkdir -p $(OBJDIR)
+#-nostartfiles -fPIC $(COPTIMISE)
 	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 bonus: $(NAME) $(BOBJ)

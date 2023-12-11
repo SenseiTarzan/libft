@@ -6,7 +6,7 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:25:51 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/11/27 10:25:22 by gcaptari         ###   ########.fr       */
+/*   Updated: 2023/11/27 14:42:03 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ void	*ft_memset(void *dest, int c, size_t n)
 		*s++ = (unsigned char)c;
 	return (dest);
 }
-
