@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/12/14 19:09:04 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/12/14 19:12:24 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,6 @@ SRC_BONUS			=	ft_lstnew_bonus.c			\
 
 # Objects
 OBJDIR		=	obj
-OBJ_DIR_BONUS	=	$(OBJDIR)/bonus
 OBJ			=	$(SRC:%.c=$(OBJDIR)/%.o)
 BOBJ			=	$(SRC_BONUS:%.c=$(OBJDIR)/%.o)
 
