@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/12/14 19:12:24 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/12/14 21:58:54 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ INC			=	./libft.h
 NAME		=	libft.a
 
 # Compiler
-CFLAGS		=	-MMD -Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror
 COPTIMISE	=	-O2 -ffreestanding -nostdlib -fno-builtin
 CC			=	cc
 OPTIONS		=	-I $(INC)
@@ -81,24 +81,26 @@ OPTIONS		=	-I $(INC)
 #################
 ##  TARGETS    ##
 #################
+#-nostartfiles -fPIC $(COPTIMISE)
 
-all: $(NAME)
-	@echo "libft compiled"
+all: pre $(NAME)
+
+pre:
+	@echo "libft compiling..."
 
 $(NAME): $(OBJ)
 	@ar -rcs $(NAME) $(OBJ)
+	@echo "libft compiled"
 
 so: $(OBJ)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 $(OBJDIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJDIR)
-#-nostartfiles -fPIC $(COPTIMISE)
 	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
 	@mkdir -p $(OBJDIR)
-#-nostartfiles -fPIC $(COPTIMISE)
 	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
 bonus: $(NAME) $(BOBJ)
