@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/12/14 21:58:54 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/12/14 22:02:01 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,7 +103,7 @@ $(OBJDIR)/%.o: $(SRC_BONUS_DIR)/%.c
 	@mkdir -p $(OBJDIR)
 	@$(CC) $(CFLAGS) $(OPTIONS) -o $@ -c $<
 
-bonus: $(NAME) $(BOBJ)
+bonus: pre $(NAME) $(BOBJ)
 	@ar -rcs $(NAME) $(BOBJ)
 
 clean:
