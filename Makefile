@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/12/11 09:40:05 by gcaptari         ###   ########.fr        #
+#    Updated: 2023/12/14 19:09:04 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,7 +74,7 @@ INC			=	./libft.h
 NAME		=	libft.a
 
 # Compiler
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-MMD -Wall -Wextra -Werror
 COPTIMISE	=	-O2 -ffreestanding -nostdlib -fno-builtin
 CC			=	cc
 OPTIONS		=	-I $(INC)
