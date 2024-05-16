@@ -6,7 +6,7 @@
 #    By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/07 13:44:09 by sgabsi            #+#    #+#              #
-#    Updated: 2023/12/14 22:28:01 by gcaptari         ###   ########.fr        #
+#    Updated: 2024/05/15 09:29:02 by gcaptari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRC			=	ft_atoi.c 		\
 				ft_putendl_fd.c	\
 				ft_putnbr_fd.c	\
 				ft_strmapi.c	\
-				ft_striteri.c
+				ft_striteri.c	\
+				get_next_line.c
 
 SRC_BONUS_DIR		=	$(SRC_DIR)
 SRC_BONUS			=	ft_lstnew_bonus.c			\

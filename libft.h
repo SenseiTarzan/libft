@@ -6,14 +6,20 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:48:16 by gcaptari          #+#    #+#             */
-/*   Updated: 2023/12/11 09:36:03 by gcaptari         ###   ########.fr       */
+/*   Updated: 2024/05/15 09:30:09 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+# define FD_MAX 1024
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 /*
 * permet de bypass de varialbe la limit de la normes 42 XD
@@ -235,5 +241,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 * ft_lstmap permet de creer une nouvelle liste avec une fonction
 */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+char		*get_next_line(int fd);
 
 #endif
