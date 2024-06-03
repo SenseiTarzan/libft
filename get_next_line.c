@@ -6,13 +6,13 @@
 /*   By: gcaptari <gabrielcaptari@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 14:47:38 by gcaptari          #+#    #+#             */
-/*   Updated: 2024/05/24 13:20:48 by gcaptari         ###   ########.fr       */
+/*   Updated: 2024/06/03 13:25:04 by gcaptari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	char	*ft_strjoin_gnl(char *s1, char const *s2)
+static char	*ft_strjoin_gnl(char *s1, char const *s2)
 {
 	char	*str;
 
@@ -20,11 +20,10 @@ static	char	*ft_strjoin_gnl(char *s1, char const *s2)
 		s1 = ft_strdup("");
 	if (!s1 || !s2)
 		return (0);
-	str = ft_strjoin(s1,s2);
+	str = ft_strjoin(s1, s2);
 	free(s1);
 	return (str);
 }
-
 
 char	*ft_get_read(int fd, char *stash)
 {
